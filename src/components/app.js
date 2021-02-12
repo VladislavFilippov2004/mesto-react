@@ -10,23 +10,24 @@ import ImagePopup from './imagePopup.js'
 function App(props) {
     const [isEditProfilePopupOpen, setEditProfilePopup] = React.useState(false);
     function handleEditProfileClick() {
-        setEditProfilePopup(!isEditProfilePopupOpen)
+        setEditProfilePopup(true)
     }
 
     const [isEditAvatarPopupOpen, setEditAvatarPopup] = React.useState(false);
     function handleEditAvatarClick() {
-        setEditAvatarPopup(!isEditAvatarPopupOpen)
+        setEditAvatarPopup(true)
     }
 
     const [isAddPlacePopupOpen, setAddPlacePopup] = React.useState(false)
     function handleAddPlaceClick() {
-        setAddPlacePopup(!isAddPlacePopupOpen)
+        setAddPlacePopup(true)
     }
     
     const [selectedCard, setSelectedCard] = React.useState(null)
     const [isOpen, setIsOpen] = React.useState(false)
     function handleCardClick(card) {
-        setIsOpen(!isOpen);
+        console.log('ll')
+        setIsOpen(true);
         setSelectedCard(card)
     }
 
@@ -43,7 +44,12 @@ function App(props) {
         <div className="root">
             <Header></Header>
 
-            <Main  onEditAvatar={handleEditAvatarClick} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onCardClick={handleCardClick}></Main>
+            <Main  
+            onEditAvatar={handleEditAvatarClick}
+            onEditProfile={handleEditProfileClick}
+            onAddPlace={handleAddPlaceClick}
+            onCardClick={handleCardClick}>
+            </Main>
 
             <PopupWithForm name="new-avatar" title="Обновить аватар"  isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}>
                 <fieldset className="popup__info">
