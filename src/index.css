@@ -57,6 +57,7 @@ code {
 @import url(./blocks/elements/__like/_black/elements__like_black.css);
 @import url(./blocks/elements/__text/elements__text.css);
 @import url(./blocks/elements/__trash/elements__trash.css);
+@import url(./blocks/elements/__trash/_hidden/elements__trash_hidden.css);
 @import url(./blocks/elements/__like-counter/elements__like-counter.css);
 
 @import url(./blocks/footer/__text/footer__text.css);

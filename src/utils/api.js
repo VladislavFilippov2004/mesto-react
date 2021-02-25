@@ -27,7 +27,7 @@
           'Content-type': 'application/json'
         },
         body: JSON.stringify({
-          avatar: data.link
+          avatar: data.avatar
         })
       })
       .then(res => {
@@ -46,8 +46,8 @@
           'Content-type': 'application/json'
         },
         body: JSON.stringify({
-          name: data['input-user-name'],
-          about: data['input-user-job']
+          name: data.name,
+          about: data.about
         })
       })
       .then(res => {
