@@ -20,14 +20,16 @@ function AddPlacePopup(props) {
             name: place,
             link,
         })
+        setPlace('')
+        setLink('')
     }
 
     return(
-        <PopupWithForm onSubmit={handleSubmit} name="new-place" title="Новое место" buttonText="Создать" isOpen={props.isOpen} onClose={props.onClose}>
+        <PopupWithForm  onSubmit={handleSubmit} name="new-place" title="Новое место" buttonText="Создать" isOpen={props.isOpen} onClose={props.onClose}>
             <fieldset className="popup__info">
-                        <input onChange={handlePlace} type="text" className="popup__input popup__input_place " id="place-input" name='name' placeholder="Название места" minLength="2" required />
+                        <input value={place || ''} onChange={handlePlace} type="text" className="popup__input popup__input_place " id="place-input" name='name' placeholder="Название места" minLength="2" required />
                         <span className='span-error place-input-error popup__span-error'></span>
-                        <input onChange={handleLink} type="url" className="popup__input popup__input_link" id="link-input" name='link' placeholder="Ссылка на картинку" required />
+                        <input value={link || ''} onChange={handleLink} type="url" className="popup__input popup__input_link" id="link-input" name='link' placeholder="Ссылка на картинку" required />
                         <span className='span-error link-input-error popup__span-error'></span>
                     </fieldset>
         </PopupWithForm>

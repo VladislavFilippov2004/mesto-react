@@ -24,7 +24,7 @@ function Card(props) {
 
 
     return (
-        <template className='elements elements__template' id='item-template'>
+        // <template className='elements elements__template' id='item-template'>
             <div className="elements__item">
                 <img className="elements__image" src={props.card.link} alt='Увеличенная в размере картинка' onClick={handleClick} />
                 <div className="elements__under-picture">
@@ -35,7 +35,7 @@ function Card(props) {
                     <button className={`${isOwn ? 'elements__trash' : 'elements__trash_hidden'}`} onClick={handleDeleteClick} type="button"></button>
                 </div>
             </div>
-        </template>
+        // </template>
     )
 }
 export default Card;
