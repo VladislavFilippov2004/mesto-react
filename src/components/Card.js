@@ -1,9 +1,9 @@
 import React from 'react';
-import { currentUserContext } from '../contexts/CurrentUserContext.js';
+import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 import api from '../utils/api.js';
 
 function Card(props) {
-    const cardContext = React.useContext(currentUserContext); // переменная подписка к контексту
+    const cardContext = React.useContext(CurrentUserContext); // переменная подписка к контексту
     const isOwn = props.card.owner._id === cardContext._id; // переменная, сравнивающая id владельца карточки и наш id для 
     // управление классами иконки мусорки
     const isLiked = props.card.likes.some(i => i._id === cardContext._id); // переменная, сравинивающая id владельца карточки и 
@@ -26,7 +26,7 @@ function Card(props) {
     return (
         // <template className='elements elements__template' id='item-template'>
             <div className="elements__item">
-                <img className="elements__image" src={props.card.link} alt='Увеличенная в размере картинка' onClick={handleClick} />
+                <img className="elements__image" src={props.card.link} alt={`Увеличенная в размере картинка ${props.card.name}`}  onClick={handleClick} />
                 <div className="elements__under-picture">
                     <h4 className="elements__text">{props.card.name}</h4>
                     <button className={cardLikeButtonClassName} type="button" onClick={handleLikeClick}>

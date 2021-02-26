@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { currentUserContext } from '../contexts/CurrentUserContext.js'
+import { CurrentUserContext } from '../contexts/CurrentUserContext.js'
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
@@ -127,7 +127,7 @@ function App() {
 
     return (
 
-        <currentUserContext.Provider value={currentUser}>
+        <CurrentUserContext.Provider value={currentUser}>
 
             <div className="root">
                 <Header></Header>
@@ -151,7 +151,7 @@ function App() {
 
             </div>
 
-        </currentUserContext.Provider>
+        </CurrentUserContext.Provider>
     );
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import pen from '../images/pen.svg';
-import {currentUserContext} from '../contexts/CurrentUserContext.js';
+import {CurrentUserContext} from '../contexts/CurrentUserContext.js';
 import editButton from '../images/button-edit.svg';
 import addButton from '../images/add-button.svg';
 import api from '../utils/api.js';
@@ -8,14 +8,14 @@ import Card from './Card.js';
 
 
 function Main(props) { 
-    const mainContext = React.useContext(currentUserContext); // подписка на контекст
+    const mainContext = React.useContext(CurrentUserContext); // подписка на контекст
 
     return (
         <main>
             <div className="profile">
                 <div className="profile__avatar" style={{ backgroundImage: `url(${mainContext.avatar})` }} onClick={props.onEditAvatar}>
                     <div className='profile__box'>
-                        <img className="profile__pen" src={pen} />
+                        <img className="profile__pen" src={pen} alt='pen'/>
                     </div>
                 </div>
                 <div className="profile__info">
@@ -35,12 +35,12 @@ function Main(props) {
             </div> 
         
         <section className='elements'>
-        {props.cards.map((item) =><Card 
+        {props.cards.map((item) => (<Card 
         key={item._id}
         card={item}
         onCardLike={props.onCardLike}
         onCardDelete={props.onCardDelete}
-        onCardClick={props.onCardClick}/>)}
+        onCardClick={props.onCardClick}/>))}
         
         </section>
         </main>
