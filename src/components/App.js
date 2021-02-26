@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { currentUserContext } from '../contexts/CurrentUserContext.js'
-import Header from './header.js';
-import Main from './main.js';
-import Footer from './footer.js';
+import Header from './Header.js';
+import Main from './Main.js';
+import Footer from './Footer.js';
 import api from '../utils/api.js';
 import '../index.css';
-import PopupWithForm from './popupWithForm.js'
-import EditProfilePopup from './editProfilePopup.js'
-import EditAvatarPopup from './editAvatarPopup.js'
-import AddPlacePopup from './addPlacePopup.js'
-import ImagePopup from './imagePopup.js'
+import EditProfilePopup from './EditProfilePopup.js'
+import EditAvatarPopup from './EditAvatarPopup.js'
+import AddPlacePopup from './AddPlacePopup.js'
+import ImagePopup from './ImagePopup.js'
 
 function App() {
     const [currentUser, setCurrentUser] = React.useState({})
@@ -59,7 +58,7 @@ function App() {
 
     const [isEditProfilePopupOpen, setEditProfilePopup] = React.useState(false);
     function handleEditProfileClick() {
-        setEditProfilePopup(true)
+              setEditProfilePopup(true)
     }
 
     const [isEditAvatarPopupOpen, setEditAvatarPopup] = React.useState(false);

@@ -4,7 +4,7 @@ import {currentUserContext} from '../contexts/CurrentUserContext.js';
 import editButton from '../images/button-edit.svg';
 import addButton from '../images/add-button.svg';
 import api from '../utils/api.js';
-import Card from './card.js';
+import Card from './Card.js';
 
 
 function Main(props) { 
